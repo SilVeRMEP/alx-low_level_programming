@@ -1,9 +1,11 @@
-	#include <stdio.h>
-	/**
-	* main - Prints out a string to stdout.
-	* Return : 0 (Succes)
-	*/
-	int main(void) {
+#include <stdio.h>
+/**
+* main - Prints out a string to stdout.
+* Return : 0 (Succes)
+*/
+int main(void)
+{
+
 	char a;
 	int b;
 	long int c;
@@ -15,4 +17,4 @@
 	printf("Size of a clong long int: %lu byte(s) \n", (unsigned long)sizeof(d));
 	printf("Size of a float: %lu byte(s) \n", (unsigned long)sizeof(f));
 	return (0);
-	}
+}
