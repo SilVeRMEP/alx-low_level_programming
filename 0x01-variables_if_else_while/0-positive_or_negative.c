@@ -9,23 +9,24 @@
 
 int main(void)
 {
-	int n;
+int randomNumber;
+srand(time(0));
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
+randomNumber = rand() - RAND_MAX / 2;
 
-	if (n > 0)
-	{
-		printf("%i is positive\n", n);
-	}
-	else if (n == 0)
-	{
-		printf("%i is zero\n", n);
-	}
-	else if (n < 0)
-	{
-		printf("%i is negative\n", n);
-	}
-
-	return (0);
+if (randomNumber > 0)
+{
+    printf("%i is positive\n", randomNumber);
 }
+else if (randomNumber == 0)
+{
+    printf("%i is zero\n", randomNumber);
+}
+else
+{
+    printf("%i is negative\n", randomNumber);
+}
+
+return (0);
+}
+
