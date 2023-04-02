@@ -7,15 +7,21 @@
  *
  * Return: Always 0.
  */
-int main(void)
+int	main(void)
 {
-	char c = '0';
+	char	D;
 
-	while (c <= 'f')
+	D = '0';
+	while (D <= '9')
 	{
-		if (c <= '9' || (c >= 'a' && c <= 'f')) /* print only valid hexadecimal characters */
-			putchar(c);
-		c++;
+		putchar(D);
+		D++;
+	}
+	D = 'a';
+	while (D <= 'f')
+	{
+		putchar(D);
+		D++;
 	}
 	putchar('\n');
 	return (0);
