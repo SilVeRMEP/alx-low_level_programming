@@ -1,4 +1,4 @@
- #include <stdlib.h>
+#include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
 
@@ -7,28 +7,34 @@
  * Return: Always 0 (Success)
  */
 
-int main(void)
+int	main(void)
 {
- int digit_one;
- int digit_ten;
- int digit_hundred;
+	int	i;
+	int	j;
+	int	m;
 
- for (digit_hundred = '0'; digit_hundred <= '9'; digit_hundred++) 
+	i = 0;
+	while (i < 10)
 	{
-	 for (digit_ten = (digit_hundred + 1); digit_ten <= '9'; digit_ten++) 
-	 {
-	  for (digit_one = (digit_ten + 1); digit_one <= '9'; digit_one++) 
-	  {
-		  putchar(digit_hundred);
-		  putchar(digit_ten);
-		  putchar(digit_one);
-		if (digit_hundred != '7' || digit_ten != '8' || digit_one != '9')
+		j = i + 1;
+		while (j < 10)
 		{
-		  putchar(',');
-		  putchar(' ');
+			m = j + 1;
+			while (m < 10)
+			{
+				putchar('0' + i);
+				putchar('0' + j);
+				putchar('0' + m);
+				if (i != 7 || j != 8 || m != 9)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+				m++;
+			}
+			j++;
 		}
-	  }
-	 }
+		i++;
 	}
 	putchar('\n');
 	return (0);
