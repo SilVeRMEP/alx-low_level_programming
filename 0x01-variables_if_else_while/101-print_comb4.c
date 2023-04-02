@@ -9,28 +9,27 @@
 
 int main(void)
 {
-	int digit_one;
-	int digit_ten;
-	int digit_hundred;
+ int digit_one;
+ int digit_ten;
+ int digit_hundred;
 
-	for (digit_hundred = '0'; digit_hundred <= '9'; digit_hundred++) 
+ for (digit_hundred = '0'; digit_hundred <= '9'; digit_hundred++) 
 	{
-		for (digit_ten = (digit_hundred + 1); digit_ten <= '9'; digit_ten++) 
+	 for (digit_ten = (digit_hundred + 1); digit_ten <= '9'; digit_ten++) 
+	 {
+	  for (digit_one = (digit_ten + 1); digit_one <= '9'; digit_one++) 
+	  {
+		  putchar(digit_hundred);
+		  putchar(digit_ten);
+		  putchar(digit_one);
+		if (digit_hundred != '7' || digit_ten != '8' || digit_one != '9')
 		{
-			for (digit_one = (digit_ten + 1); digit_one <= '9'; digit_one++) 
-			{
-				putchar(digit_hundred);
-				putchar(digit_ten);
-				putchar(digit_one);
-				if (digit_hundred != '7' || digit_ten != '8' || digit_one != '9')
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
+		  putchar(',');
+		  putchar(' ');
 		}
+	  }
+	 }
 	}
 	putchar('\n');
-
 	return (0);
 }
