@@ -6,14 +6,15 @@
  *main - print 0123456789 using putchar
  *Return: Always 0 (Success)
  */
-int main(void)
+int	main(void)
 {
-	int n = '0';
+	int	S;
 
-	while (n <= '9')
+	S = '0';
+	while (S <= '9')
 	{
-		putchar(n);
-		n++;
+		putchar(S);
+		S++;
 	}
 	putchar('\n');
 	return (0);
