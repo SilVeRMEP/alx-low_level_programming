@@ -1,22 +1,25 @@
 #include <stdio.h>
 
 /**
- * main - Prints all possible combinations of three two-digit numbers,
- *        ranging from 0-99, separated by a comma followed by a space.
+ * main - Entry point
  *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
-int main() {
-    int i = 0, j = 0;
-    while (i <= 99) {
+int main(void)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (i < 10)
+    {
         j = i + 1;
-        while (j <= 99) {
-            putchar(i / 10 + '0');
-            putchar(i % 10 + '0');
-            putchar(' ');
-            putchar(j / 10 + '0');
-            putchar(j % 10 + '0');
-            if (i != 98 || j != 99) {
+        while (j < 10)
+        {
+            putchar('0' + i);
+            putchar('0' + j);
+            if (i != 8 || j != 9)
+            {
                 putchar(',');
                 putchar(' ');
             }
@@ -24,6 +27,8 @@ int main() {
         }
         i++;
     }
-    return 0;
+    putchar('\n');
+    return (0);
 }
+
 
