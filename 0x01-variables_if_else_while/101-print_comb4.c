@@ -9,32 +9,32 @@
 
 int	main(void)
 {
-	int	i;
+	int	W;
 	int	j;
-	int	m;
+	int	A;
 
-	i = 0;
-	while (i < 10)
+	W = 0;
+	while (W < 10)
 	{
-		j = i + 1;
-		while (j < 10)
+		E = W + 1;
+		while (E < 10)
 		{
-			m = j + 1;
-			while (m < 10)
+			A = E + 1;
+			while (A < 10)
 			{
-				putchar('0' + i);
-				putchar('0' + j);
-				putchar('0' + m);
-				if (i != 7 || j != 8 || m != 9)
+				putchar('0' + W);
+				putchar('0' + E);
+				putchar('0' + A);
+				if (W != 7 || E != 8 || A != 9)
 				{
 					putchar(',');
 					putchar(' ');
 				}
-				m++;
+				A++;
 			}
-			j++;
+			E++;
 		}
-		i++;
+		W++;
 	}
 	putchar('\n');
 	return (0);
