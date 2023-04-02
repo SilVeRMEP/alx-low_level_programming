@@ -10,19 +10,19 @@
  */
 int	main(void)
 {
-	char	D;
+	char	n;
 
-	D = '0';
-	while (D <= '9')
+	n = '0';
+	while (n <= '9')
 	{
-		putchar(D);
-		D++;
+		putchar(n);
+		n++;
 	}
-	D = 'a';
-	while (D <= 'f')
+	n = 'a';
+	while (n <= 'f')
 	{
-		putchar(D);
-		D++;
+		putchar(n);
+		n++;
 	}
 	putchar('\n');
 	return (0);
