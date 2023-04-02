@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  *main - print numbers 0-9 separated with commas and a space, using putchar
