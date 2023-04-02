@@ -7,21 +7,20 @@
  *main - print numbers 0-9 separated with commas and a space, using putchar
  *Return: Always 0 (Success)
  */
-int main(void)
 int	main(void)
 {
-	int	Q;
+	int	n;
 
-	Q = '0';
-	while (Q <= '9')
+	n = '0';
+	while (n <= '9')
 	{
-		putchar(Q);
-		if (Q != '9')
+		putchar(n);
+		if (n != '9')
 		{
 			putchar(',');
 			putchar(' ');
 		}
-		Q++;
+		n++;
 	}
 	putchar('\n');
 	return (0);
