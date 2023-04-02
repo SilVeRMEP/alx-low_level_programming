@@ -7,16 +7,16 @@
  *
  * Return: Always 0.
  */
-int main(void)
+int	main(void)
 {
-    int num = 0;
+	char	V;
 
-    while (num < 10)
-    {
-        putchar(num + '0');
-        num++;
-    }
-
-    putchar('\n');
-    return (0);
+	V = '0';
+	while (V <= '9')
+	{
+		putchar(V);
+		V++;
+	}
+	putchar('\n');
+	return (0);
 }
