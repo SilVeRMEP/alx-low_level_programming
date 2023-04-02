@@ -4,11 +4,10 @@
 #include <unistd.h>
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * alx_putnbr - prints numbers < 1000
+ * @n: first parameter
  */
-void	put(int n)
+void	alx_putnbr(int n)
 {
 	if (n < 10)
 	{
@@ -21,6 +20,11 @@ void	put(int n)
 		putchar('0' + n % 10);
 	}
 }
+
+/**
+ * main - main function
+ * Return: 0 if the program finish whitout errors
+ */
 int	main(void)
 {
 	int i;
@@ -32,9 +36,9 @@ int	main(void)
 		j = i + 1;
 		while (j < 100)
 		{
-			put(i);
+			alx_putnbr(i);
 			putchar(' ');
-			put(j);
+			alx_putnbr(j);
 			if (i != 98 || j != 99)
 			{
 				putchar(',');
