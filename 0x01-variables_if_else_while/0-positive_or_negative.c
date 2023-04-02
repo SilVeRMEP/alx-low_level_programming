@@ -1,30 +1,29 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /**
  *main - Entry point
  *Return: Always 0 (Success)
  */
-
 int main(void)
 {
-int randomNumber;
+int n;
+
 srand(time(0));
 
-randomNumber = rand() - RAND_MAX / 2;
+n = rand() - RAND_MAX / 2;
 
-if (randomNumber > 0)
+if (n > 0)
 {
-    printf("%i is positive\n", randomNumber);
+    printf("%i is positive\n", n);
 }
-else if (randomNumber == 0)
+else if (n == 0)
 {
-    printf("%i is zero\n", randomNumber);
+    printf("%i is zero\n", n);
 }
 else
 {
-    printf("%i is negative\n", randomNumber);
+    printf("%i is negative\n", n);
 }
 
 return (0);
