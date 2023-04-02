@@ -1,18 +1,18 @@
 #include <stdio.h>
 
 /**
- *main - print lowercase a-z
- *Return: Always 0 (Success)
+ * main - Prints lowercase letters a-z.
+ *
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	char alpha = 'a';
+	char letter = 'a';
 
-	while (alpha <= 'z')
+	while (letter <= 'z')
 	{
-		putchar(alpha);
-		alpha++;
+		putchar(letter);
+		letter++;
 	}
 	putchar('\n');
 
