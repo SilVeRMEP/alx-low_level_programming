@@ -1,35 +1,32 @@
 #include <stdio.h>
 
 /**
-*main - print all two-digit numbers with no repeated digits
-*Return: Always 0 (Success)
-*/
-
-int main(void)
+ * main - main function
+ * Return: 0 if the program finish whitout errors
+ */
+int	main(void)
 {
-int tens_digit;
-int ones_digit;
-int print_comma = 0; 
-for (tens_digit = 0; tens_digit < 10; tens_digit++) 
-{
-    for (ones_digit = 0; ones_digit < 10; ones_digit++) 
-    {
-        if (tens_digit != ones_digit)
-        {
-            putchar(tens_digit + '0');
-            putchar(ones_digit + '0');
+	int	i;
+	int	j;
 
-            
-            if (!(tens_digit == 9 && ones_digit == 9))
-            {
-                putchar(',');
-                putchar(' ');
-            }
-        }
-    }
+	i = 0;
+	while (i < 10)
+	{
+		j = i + 1;
+		while (j < 10)
+		{
+			putchar('0' + i);
+			putchar('0' + j);
+			if (i != 8 || j != 9)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+			j++;
+		}
+		i++;
+	}
+	putchar('\n');
+	return (0);
 }
 
-putchar('\n');
-
-return (0);
-}

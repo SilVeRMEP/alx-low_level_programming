@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
@@ -13,7 +15,6 @@ int main(void)
     {
         putchar(letter);
     }
-
     putchar('\n');
     return 0;
 }

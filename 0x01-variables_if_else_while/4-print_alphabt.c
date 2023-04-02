@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
@@ -7,18 +9,16 @@
  */
 int main(void)
 {
-    char letter = 'a';
+    char L = 'a';
 
-    while (letter <= 'z')
-    {
-        if (letter != 'e' && letter != 'q')
-        {
-            putchar(letter);
-        }
-        letter++;
-    }
-
-    putchar('\n');
-
-    return 0;
+    while (L <= 'z')
+{
+        if (L != 'q' && L != 'e')
+{
+            putchar(L);
+}
+        L++;
+}
+  putchar('\n');
+  return (0);
 }
