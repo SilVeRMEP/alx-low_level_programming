@@ -7,18 +7,17 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void)
+int	main(void)
 {
- char L = 'a';
+	char	L;
 
- while (L <= 'z')
-{
- if (L != 'q' && L != 'e')
-{
-  putchar(L);
-}
-  L++;
-}
- putchar('\n');
- return (0);
+	L = 'a';
+	while (L <= 'z')
+	{
+		if (L != 'e' && L != 'q')
+			putchar(n);
+		L++;
+	}
+	putchar('\n');
+	return (0);
 }
