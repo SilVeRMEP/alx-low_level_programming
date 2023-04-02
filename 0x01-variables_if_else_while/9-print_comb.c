@@ -7,18 +7,20 @@
  *Return: Always 0 (Success)
  */
 int main(void)
+int	main(void)
 {
-	int num = 0;
+	int	Q;
 
-	while (num < 10)
+	Q = '0';
+	while (Q <= '9')
 	{
-		putchar(num + '0');
-		if (num != 9)
+		putchar(Q);
+		if (Q != '9')
 		{
 			putchar(',');
 			putchar(' ');
 		}
-		num++;
+		Q++;
 	}
 	putchar('\n');
 	return (0);
