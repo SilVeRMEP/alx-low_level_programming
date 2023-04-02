@@ -10,9 +10,6 @@ int main(void)
 int tens_digit;
 int ones_digit;
 int print_comma = 0; 
-
-scss
-Copy code
 for (tens_digit = 0; tens_digit < 10; tens_digit++) 
 {
     for (ones_digit = 0; ones_digit < 10; ones_digit++) 
