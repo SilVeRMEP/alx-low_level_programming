@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * main - Prints the hexadecimal numbers from 0 to f using putchar.
