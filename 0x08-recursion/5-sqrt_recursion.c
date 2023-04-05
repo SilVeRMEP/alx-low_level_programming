@@ -1,29 +1,49 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - Returns the natural square root of a number
- * @n: The number to find the square root of
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: number to find square root of
  *
- * Return: The square root of n, or -1 if n doesn't have a natural square root
+ * Return: the natural square root of n, or -1 if n does not have a natural
+ * square root
  */
 int _sqrt_recursion(int n)
 {
-    /* Base case: 0 and 1 have a natural square root of itself */
+    return (sqrt_helper(1, n / 2, n));
+}
+
+/**
+ * sqrt_helper - recursively finds square root of n
+ * @left: left endpoint of binary search interval
+ * @right: right endpoint of binary search interval
+ * @n: number to find square root of
+ *
+ * Return: square root of n, or -1 if n does not have a natural square root
+ */
+int sqrt_helper(int left, int right, int n)
+{
+    int mid;
+
+    if (n < 0)
+        return (-1);
     if (n == 0 || n == 1)
-        return n;
+        return (n);
 
-    /* Recursive case: find the square root of n / 2 */
-    int sqrt_n = _sqrt_recursion(n / 2);
-
-    /* If the square of the result is equal to n, we've found the square root */
-    if (sqrt_n * sqrt_n == n)
-        return sqrt_n;
-
-    /* If the square of the result is less than n, try again with n / 2 */
-    else if (sqrt_n * sqrt_n < n)
-        return _sqrt_recursion(n);
-
-    /* Otherwise, n doesn't have a natural square root */
+    mid = (left + right) / 2;
+    if (mid * mid == n)
+        return (mid);
+    else if (mid * mid < n)
+    {
+        if (mid + 1 <= right)
+            return (sqrt_helper(mid + 1, right, n));
+        else
+            return (-1);
+    }
     else
-        return -1;
+    {
+        if (left <= mid - 1)
+            return (sqrt_helper(left, mid - 1, n));
+        else
+            return (-1);
+    }
 }
