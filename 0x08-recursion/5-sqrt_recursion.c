@@ -2,9 +2,7 @@
 
 /**
  * _sqrt_recursion - helper function to calculate the square root recursively
- * @n: the number to calculate the square root of
- * @i: the square root
- *
+ * @n: the number to calculate the square root
  * Return: the square root of n if it exists, -1 otherwise
  */
 int _sqrt_recursion(int n)

@@ -1,16 +1,22 @@
 #include "main.h"
 
 /**
- * _strlen_recursion - Returns the length of a string
- * @s: String to find the length of
- *
- * Return: Length of string
+ * is_prime_number - checks if a number is prime
+ * @n: the number to check
+ * Return: 1 if prime, 0 otherwise
  */
-
-int _strlen_recursion(char *s)
+int is_prime_number(int n)
 {
-	if (*s == '\0')
-		return (0);
+    int i;
 
-	return (1 + _strlen_recursion(s + 1));
+    if (n <= 1)
+        return (0);
+
+    for (i = 2; i < n; i++)
+    {
+        if (n % i == 0)
+            return (0);
+    }
+
+    return (1);
 }
