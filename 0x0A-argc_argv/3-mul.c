@@ -9,26 +9,19 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, num, sum = 0;
-	
-	for (i = 1; i < argc; i++)
-	{
-		int j = 0;
-		while (argv[i][j] != '\0')
-		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
-			{
-				printf("Error\n");
-				return (1);
-			}
-			j++;
-		}
+	int num1, num2, result;
 
-		num = atoi(argv[i]);
-		sum += num;
-		
+	if (argc != 3)
+	{
+		printf("Error\n");
+		return (1);
 	}
-	printf("%d\n", sum);
+
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
+	result = num1 * num2;
+
+	printf("%d\n", result);
 
 	return (0);
 }
