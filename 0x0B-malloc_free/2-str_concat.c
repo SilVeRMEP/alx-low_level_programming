@@ -28,9 +28,8 @@ char *str_concat(char *s1, char *s2)
 	if (concat == NULL)
 		return (NULL);
 
-	for (index = 0; index < len1; index++)
-		concat[index] = s1[index];
-	for (int i = 0; i < len2; i++, index++)
+	int i;
+	for (i = 0; i < len2; i++, index++)
 		concat[index] = s2[i];
 
 	concat[index] = '\0';
