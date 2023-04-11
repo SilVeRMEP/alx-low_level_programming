@@ -44,4 +44,5 @@ char *argstostr(int ac, char **av)
 	str[index] = '\0';
 
 	return (str);
+	}
 }
