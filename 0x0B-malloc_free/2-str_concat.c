@@ -10,28 +10,30 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int len1, len2, index;
-	char *result;
+	int len1 = 0, len2 = 0, index = 0;
+	char *concat;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	len1 = strlen(s1);
-	len2 = strlen(s2);
+	while (s1[len1])
+		len1++;
+	while (s2[len2])
+		len2++;
 
-	result = (char *)malloc((len1 + len2 + 1) * sizeof(char));
-	if (result == NULL)
+	concat = (char *)malloc((len1 + len2 + 1) * sizeof(char));
+
+	if (concat == NULL)
 		return (NULL);
 
 	for (index = 0; index < len1; index++)
-		result[index] = s1[index];
-
+		concat[index] = s1[index];
 	for (int i = 0; i < len2; i++, index++)
-		result[index] = s2[i];
+		concat[index] = s2[i];
 
-	result[index] = '\0';
+	concat[index] = '\0';
 
-	return (result);
+	return (concat);
 }

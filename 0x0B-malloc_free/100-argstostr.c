@@ -10,31 +10,36 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int total_length = 0;
-	int index = 0;
-	char *result;
+	int i, j, len = 0, total_len = 0;
+	char *str;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (int i = 0; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
-		if (av[i] == NULL)
-			return (NULL);
-		total_length += strlen(av[i]) + 1; /* +1 for newline character */
+		len = 0;
+		while (av[i][len])
+			len++;
+		total_len += len + 1;
 	}
 
-	result = (char *)malloc((total_length + 1) * sizeof(char));
-	if (result == NULL)
-		return (NULL);
+	str = (char *)malloc(total_len * sizeof(char));
 
-	for (int i = 0; i < ac; i++)
+	if (str == NULL)
+		return (NUL)L;
+
+	for (i = 0, j = 0; i < ac; i++)
 	{
-		strcpy(result + index, av[i]);
-		index += strlen(av[i]);
-		result[index++] = '\n';
+		len = 0;
+		while (av[i][len])
+		{
+			str[j++] = av[i][len++];
+		}
+		str[j++] = '\n';
 	}
-	result[total_length] = '\0';
+	str[j] = '\0';
 
-	return (result);
+	return (str);
 }
+
