@@ -8,9 +8,10 @@
  */
 char *_strdup(char *str)
 {
+	unsigned int i;
 	char *dup;
 	unsigned int len = 0;
-
+	
 	if (str == NULL)
 		return (NULL);
 
@@ -21,7 +22,6 @@ char *_strdup(char *str)
 	if (dup == NULL)
 		return (NULL);
 
-	unsigned int i;
 	for (i = 0; i <= len; i++)
 		dup[i] = str[i];
 
