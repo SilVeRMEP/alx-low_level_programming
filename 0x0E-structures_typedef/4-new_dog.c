@@ -1,3 +1,5 @@
+#include "dog.h"
+
 /**
  * new_dog - Creates a new struct dog and initializes its members.
  * @name: the name of the dog.
