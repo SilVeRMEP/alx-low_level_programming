@@ -5,15 +5,12 @@
  *
  * Return: 0 on success.
  */
-int main(void)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	struct dog my_dog;
+	if (d == NULL)
+		return;
 
-	init_dog(&my_dog, "Buddy", 3.5, "John");
-
-	printf("Dog's name: %s\n", my_dog.name);
-	printf("Dog's age: %.1f\n", my_dog.age);
-	printf("Dog's owner: %s\n", my_dog.owner);
-
-	return (0);
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
 }
