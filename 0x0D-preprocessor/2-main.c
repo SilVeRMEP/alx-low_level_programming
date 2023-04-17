@@ -3,10 +3,10 @@
 /**
  * main - Entry point of the program
  *
- * Return: 0 on success
+ * Return: (0)
  */
 int main(void)
 {
 	printf("File: %s\n", __FILE__);
-	return 0;
+	return (0);
 }
