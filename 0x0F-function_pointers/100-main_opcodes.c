@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 		const char *error_message = "Error\n";
 
 		while (*error_message)
-			putchar(*error_message++);
+			_putchar(*error_message++);
 		return (1);
 	}
 
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		const char *error_message = "Error\n";
 
 		while (*error_message)
-			putchar(*error_message++);
+			_putchar(*error_message++);
 		return (2);
 	}
 
@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
 	{
 		unsigned char opcode = main_ptr[i];
 
-		putchar("0123456789abcdef"[opcode / 16]);
-		putchar("0123456789abcdef"[opcode % 16]);
+		_putchar("0123456789abcdef"[opcode / 16]);
+		_putchar("0123456789abcdef"[opcode % 16]);
 	}
-	putchar('\n');
+	_putchar('\n');
 
 	return (0);
 
