@@ -1,44 +1,39 @@
 #include <stdlib.h>
-#include <string.h>
-
-void print_opcodes(int num_bytes);
+#include "function_pointers.h"
 
 int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-		exit(1);
+		const char *error_message = "Error\n";
+
+		while (*error_message)
+			putchar(*error_message++);
+		return (1);
 	}
 
 	int num_bytes = atoi(argv[1]);
 
 	if (num_bytes <= 0)
 	{
-		exit(2);
+		const char *error_message = "Error\n";
+
+		while (*error_message)
+			putchar(*error_message++);
+		return (2);
 	}
 
-	print_opcodes(num_bytes);
+	unsigned char *main_ptr = (unsigned char *)main;
+
+	for (int i = 0; i < num_bytes; i++)
+	{
+		unsigned char opcode = main_ptr[i];
+
+		putchar("0123456789abcdef"[opcode / 16]);
+		putchar("0123456789abcdef"[opcode % 16]);
+	}
+	putchar('\n');
 
 	return (0);
-}
 
-void print_opcodes(int num_bytes)
-{
-	unsigned char *opcodes = (unsigned char *) malloc(num_bytes);
-
-	memset(opcodes, 0, num_bytes);
-
-	for (int i = 0; i < num_bytes; i++)
-	{
-		opcodes[i] = ((unsigned char *) print_opcodes)[i];
-	}
-
-	for (int i = 0; i < num_bytes; i++)
-	{
-		printf("%02x", opcodes[i]);
-	}
-
-	printf("\n");
-	free(opcodes);
-	exit(0);
 }
