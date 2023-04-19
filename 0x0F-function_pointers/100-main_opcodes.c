@@ -1,39 +1,45 @@
+#include <stdio.h>
 #include <stdlib.h>
-#include "function_pointers.h"
 
+/**
+ * main - prints the opcodes of its own main function
+ * @argc: the number of arguments
+ * @argv: the array of arguments
+ *
+ * Return: 0 on success, 1 or 2 on error
+ */
 int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-		const char *error_message = "Error\n";
-
-		while (*error_message)
-			_putchar(*error_message++);
+		printf("Error\n");
 		return (1);
 	}
 
 	int num_bytes = atoi(argv[1]);
 
-	if (num_bytes <= 0)
+	if (num_bytes < 0)
 	{
-		const char *error_message = "Error\n";
-
-		while (*error_message)
-			_putchar(*error_message++);
+		printf("Error\n");
 		return (2);
 	}
 
-	unsigned char *main_ptr = (unsigned char *)main;
+	print_opcodes(num_bytes);
+
+	return (0);
+}
+
+/**
+ * print_opcodes - prints the opcodes of the print_opcodes function
+ * @num_bytes: the number of bytes to print
+ */
+void print_opcodes(int num_bytes)
+{
+	char *main_ptr = (char *)&main;
 
 	for (int i = 0; i < num_bytes; i++)
 	{
-		unsigned char opcode = main_ptr[i];
-
-		_putchar("0123456789abcdef"[opcode / 16]);
-		_putchar("0123456789abcdef"[opcode % 16]);
+		printf("%02x", (unsigned char)main_ptr[i]);
 	}
-	_putchar('\n');
-
-	return (0);
-
+	printf("\n");
 }
