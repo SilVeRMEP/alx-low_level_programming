@@ -25,8 +25,3 @@ int sum_them_all(const unsigned int n, ...)
 
 	return (sum);
 }
-int main(void)
-{
-	return (0);
-}
-
