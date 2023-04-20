@@ -1,50 +1,5 @@
+#include <stdarg.h>
 #include "variadic_functions.h"
-
-/**
- * print_char - Print a char.
- * @arg: A va_list containing the char to print.
- */
-void print_char(va_list arg)
-{
-  char c = va_arg(arg, int);
-  _putchar(c);
-}
-
-/**
- * print_int - Print an int.
- * @arg: A va_list containing the int to print.
- */
-void print_int(va_list arg)
-{
-  int n = va_arg(arg, int);
-  print_number(n);
-}
-
-/**
- * print_float - Print a float.
- * @arg: A va_list containing the float to print.
- */
-void print_float(va_list arg)
-{
-  float f = (float)va_arg(arg, double);
-  print_number((int)f);
-  _putchar('.');
-  int decimal = (f - (int)f) * 1000;
-  if (decimal < 0)
-    decimal *= -1;
-  print_number(decimal);
-}
-
-/**
- * print_string - Print a string.
- * @arg: A va_list containing the string to print.
- */
-void print_string(va_list arg)
-{
-  char *str = va_arg(arg, char *);
-  while (*str)
-    _putchar(*(str++));
-}
 
 /**
  * print_all - Prints anything.
@@ -55,41 +10,54 @@ void print_string(va_list arg)
  */
 void print_all(const char * const format, ...)
 {
-  int i = 0, j;
-  va_list args;
-  char *separator = "";
+    va_list args;
+    const char *p = format;
+    char c_arg;
+    int i_arg;
+    double f_arg;
+    char *s_arg;
 
-  print_format formats[] = {
-    {'c', print_char},
-    {'i', print_int},
-    {'f', print_float},
-    {'s', print_string},
-    {'\0', NULL}
-  };
+    va_start(args, format);
 
-  va_start(args, format);
-
-  while (format && format[i])
-  {
-    j = 0;
-
-    while (formats[j].type)
+    while (p && *p)
     {
-      if (formats[j].type == format[i])
-      {
-        printf("%s", separator);
-        formats[j].func(args);
-        separator = ", ";
-        break;
-      }
+        switch (*p)
+        {
+            case 'c':
+                c_arg = va_arg(args, int);
+                printf("%c", c_arg);
+                break;
 
-      j++;
+            case 'i':
+                i_arg = va_arg(args, int);
+                printf("%d", i_arg);
+                break;
+
+            case 'f':
+                f_arg = va_arg(args, double);
+                printf("%f", f_arg);
+                break;
+
+            case 's':
+                s_arg = va_arg(args, char *);
+                if (s_arg == NULL)
+                    printf("(nil)");
+                else
+                    printf("%s", s_arg);
+                break;
+
+            default:
+                break;
+        }
+
+        if (*(p + 1))
+            printf(", ");
+
+        ++p;
     }
 
-    i++;
-  }
+    va_end(args);
 
-  va_end(args);
-  _putchar('\n');
+    printf("\n");
 }
 
